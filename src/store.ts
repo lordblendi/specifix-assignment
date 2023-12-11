@@ -1,13 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
-
-import counterReducer from "./components/counter/slice"
-import movieReducer from "./components/movies/slice"
 import { useDispatch } from "react-redux"
+
+import patientReducer from "./components/patients/slice"
 
 export const store = configureStore({
     reducer: {
-        counter: counterReducer,
-        movies: movieReducer,
+        patients: patientReducer,
     },
 })
 

@@ -1,25 +1,25 @@
 import { Model, Server, createServer } from "miragejs"
-import { movieFactory } from "./factories/movies"
+import { patientFactory } from "./factories/patient"
 
 export const makeServer = (): Server =>
     createServer({
         models: {
-            movie: Model,
+            patient: Model,
         },
 
         factories: {
-            movie: movieFactory,
+            patient: patientFactory,
         },
 
         seeds(server) {
-            server.createList("movie", 5)
+            server.createList("patient", 12)
         },
 
         routes() {
             this.namespace = "api"
 
-            this.get("/movies", () => {
-                return this.schema.all("movie")
+            this.get("/patients", () => {
+                return this.schema.all("patient")
             })
         },
     })
