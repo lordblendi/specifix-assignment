@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background-color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+input {
+  padding: 0.25rem;
+  border: 1px solid darkcyan;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.button {
+  background: darkcyan;
+  color: white;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
