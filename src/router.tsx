@@ -4,6 +4,7 @@ import { createHashRouter } from "react-router-dom"
 import BasePage from "./pages/app/BasePage"
 import LoginPage from "./pages/login/LoginPage"
 import PatientsLandingPage from "./pages/patientslanding/PatientsLandingPage"
+import NotFoundPage from "./pages/notfound/notFoundPage"
 
 export const router = createHashRouter([
     {
@@ -19,6 +20,14 @@ export const router = createHashRouter([
         element: (
             <BasePage>
                 <PatientsLandingPage />
+            </BasePage>
+        ),
+    },
+    {
+        path: "*",
+        element: (
+            <BasePage hasSidebar={false}>
+                <NotFoundPage />
             </BasePage>
         ),
     },
