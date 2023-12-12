@@ -2,9 +2,10 @@ import React from "react"
 import { createHashRouter } from "react-router-dom"
 
 import BasePage from "./pages/app/BasePage"
+import DetailPage from "./pages/patients/detail/DetailPage"
 import LoginPage from "./pages/login/LoginPage"
-import PatientsLandingPage from "./pages/patientslanding/PatientsLandingPage"
 import NotFoundPage from "./pages/notfound/notFoundPage"
+import PatientsLandingPage from "./pages/patients/landing/PatientsLandingPage"
 
 export const router = createHashRouter([
     {
@@ -12,6 +13,14 @@ export const router = createHashRouter([
         element: (
             <BasePage hasContainer={false} showNavbar={false}>
                 <LoginPage />
+            </BasePage>
+        ),
+    },
+    {
+        path: "/patients/:patientId",
+        element: (
+            <BasePage>
+                <DetailPage />
             </BasePage>
         ),
     },

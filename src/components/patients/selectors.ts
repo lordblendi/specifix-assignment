@@ -1,6 +1,14 @@
 import { createSelector } from "@reduxjs/toolkit"
 import { PatientState } from "./slice"
 
+export const getPatiendById = createSelector(
+    [
+        (_state: PatientState, id: string): string => id,
+        (state: PatientState): Patient[] => state.patients,
+    ],
+    (id, patients) => patients.find((patient) => patient.id === id),
+)
+
 export const getFilteredPatients = createSelector(
     [
         (state: PatientState): string => state.filter,

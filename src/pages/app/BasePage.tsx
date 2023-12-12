@@ -13,7 +13,7 @@ const BasePage = ({
     children,
     hasContainer = true,
     hasSidebar = true,
-    showNavbar = true
+    showNavbar = true,
 }: Props): JSX.Element => (
     <>
         <Header showNavbar={showNavbar} />

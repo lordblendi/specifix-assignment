@@ -1,5 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
+import { NavLink } from "react-router-dom"
 
 import { useAppDispatch, type RootState } from "../../../store"
 import { fetchPatients, setCurrentPage, setFilter } from "../slice"
@@ -51,7 +52,11 @@ const PatientList = (): JSX.Element => {
                     <ul>
                         {filteredAndPatients.map(
                             (patient, index): JSX.Element => (
-                                <li key={index}>{patient.name}</li>
+                                <li key={index}>
+                                    <NavLink to={`/patients/${patient.id}`}>
+                                        {patient.name}
+                                    </NavLink>
+                                </li>
                             ),
                         )}
                     </ul>

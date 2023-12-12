@@ -1,4 +1,5 @@
 interface Patient {
+    id: string
     name: string
     gender: string
     birthDate: string
