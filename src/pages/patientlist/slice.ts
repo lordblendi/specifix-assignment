@@ -12,16 +12,29 @@ export const fetchPatients = createAsyncThunk("patients/fetchAll", async () => {
 
 export interface PatientState {
     patients: Patient[]
+    filter: string
+    pageSize: number
+    currentPage: number
 }
 
 const initialState: PatientState = {
     patients: [],
+    filter: "",
+    pageSize: 10,
+    currentPage: 0,
 }
 
 export const patientsSlice = createSlice({
     name: "patientsSlice",
     initialState,
-    reducers: {},
+    reducers: {
+        setFilter: (state, action) => {
+            state.filter = action.payload
+        },
+        setCurrentPage: (state, action) => {
+            state.currentPage = action.payload
+        },
+    },
     extraReducers(builder) {
         builder.addCase(fetchPatients.fulfilled, (state, action) => {
             state.patients = action.payload
@@ -33,6 +46,6 @@ export const patientsSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-// export const {} = patientsSlice.actions
+export const { setFilter, setCurrentPage } = patientsSlice.actions
 
 export default patientsSlice.reducer
