@@ -1,9 +1,14 @@
 import React, { HTMLAttributes } from "react"
 
+import Header from "../../components/header/Header"
+
 interface Props extends HTMLAttributes<HTMLElement> {}
 
 const BasePage = ({ children }: Props): JSX.Element => (
-    <main className="tw-p-10">{children}</main>
+    <>
+        <Header />
+        <main>{children}</main>
+    </>
 )
 
 export default BasePage

@@ -6,8 +6,12 @@ body {
   line-height: 1.5;
 }
 
+main {
+  padding: 8rem 2.5rem;
+}
+
 input {
-  padding: 0.25rem;
+  padding: 0.5rem;
   border: 1px solid darkcyan;
   border-radius: 0.5rem;
   width: 100%;
@@ -16,6 +20,6 @@ input {
 .button {
   background: darkcyan;
   color: white;
-  padding: 0.25rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
 }
