@@ -21,7 +21,7 @@ const BasePage = ({
             {hasContainer ? (
                 <div className="container">
                     {hasSidebar && <PatientList />}
-                    <div>{children}</div>
+                    <div className="content">{children}</div>
                 </div>
             ) : (
                 <>{children}</>

@@ -5,35 +5,30 @@ import { useSelector } from "react-redux"
 import { RootState } from "../../../store"
 
 import { getPatiendById } from "../../../components/patients/selectors"
+import PatientDetail from "./components/PatientDetail"
+import StlViewer from "./components/StlViewer"
+import PatientNotFound from "./components/PatientNotFound"
 
 export const DetailPage = (): JSX.Element => {
     const { patientId } = useParams()
     const patientsState = useSelector((state: RootState) => state.patients)
 
-    console.log(useParams())
-
-    const patiendDoesNotExistElement: JSX.Element = (
-        <div className="tw-p-8">
-            <h1>Patient not found</h1>
-            <div className="tw-py-8">
-                <p>The page you are looking for does not exist.</p>
-            </div>
-        </div>
-    )
-
     if (!patientId) {
-        return patiendDoesNotExistElement
+        return <PatientNotFound patientId={""} />
     }
 
     const patient = getPatiendById(patientsState, patientId)
 
     if (!patient) {
-        return patiendDoesNotExistElement
+        return <PatientNotFound patientId={patientId} />
     }
 
-    console.log(patient)
-
-    return <div>{patient.name}</div>
+    return (
+        <>
+            <PatientDetail patient={patient} />
+            <StlViewer patient={patient} />
+        </>
+    )
 }
 
 export default DetailPage

@@ -17,11 +17,13 @@ export const patientFactory = Factory.extend({
     },
 
     birthDate() {
-        return faker.date.birthdate({ min: 16, max: 70 }).toISOString()
+        return faker.date.birthdate({ min: 16, max: 70 })
     },
 
     birthLocation() {
-        return generateAddress()
+        const city = faker.location.city()
+        const country = faker.location.country()
+        return `${city}, ${country}`
     },
 
     address() {
@@ -29,7 +31,7 @@ export const patientFactory = Factory.extend({
     },
 
     phone() {
-        return faker.phone.number()
+        return faker.phone.number("+## ##/### ## ##")
     },
 
     stlFile(index) {
