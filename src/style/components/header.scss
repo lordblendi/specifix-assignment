@@ -5,8 +5,10 @@
   left: 0;
   right: 0;
   transition: all 0.1s;
-  background-color: none;
   box-shadow: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   &--scrolled {
     background-color: white;
@@ -17,4 +19,27 @@
     max-height: 75px;
   }
 
+  nav {
+    a {
+      color: $primaryColor;
+      display: inline-block;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      margin: 0 0.5rem;
+
+      &.active {
+        background-color: $primaryColor;
+        color: white;
+      }
+
+      &:hover {
+        background-color: $primaryHoverColor;
+        color: white;
+      }
+
+
+    }
+  }
 }

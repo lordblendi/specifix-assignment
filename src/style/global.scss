@@ -8,17 +8,18 @@ body {
 
 input {
   padding: 0.5rem;
-  border: 1px solid darkcyan;
+  border: 1px solid $primaryColor;
   border-radius: 0.5rem;
   width: 100%;
+  outline: none;
 }
 
 .button {
-  background: darkcyan;
+  background: $primaryColor;
   color: white;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  transition: all 0.1s;
+  transition: all 0.2s;
 
   &:hover {
     transform: scale(1.05);
@@ -26,7 +27,7 @@ input {
 
   &.is-inverted {
     background-color: white;
-    color: darkcyan;
+    color: $primaryColor;
   }
 
   &:disabled {
@@ -34,3 +35,5 @@ input {
     pointer-events: none;
   }
 }
+
+

@@ -9,7 +9,7 @@ export const router = createHashRouter([
     {
         path: "/",
         element: (
-            <BasePage hasContainer={false}>
+            <BasePage hasContainer={false} showNavbar={false}>
                 <LoginPage />
             </BasePage>
         ),
