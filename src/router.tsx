@@ -3,7 +3,7 @@ import { createHashRouter } from "react-router-dom"
 
 import BasePage from "./pages/app/BasePage"
 import LoginPage from "./pages/login/LoginPage"
-import PatientListPage from "./pages/patientlist/components/PatientListPage"
+import PatientsLandingPage from "./pages/patientslanding/PatientsLandingPage"
 
 export const router = createHashRouter([
     {
@@ -15,10 +15,10 @@ export const router = createHashRouter([
         ),
     },
     {
-        path: "/users",
+        path: "/patients",
         element: (
             <BasePage>
-                <PatientListPage />
+                <PatientsLandingPage />
             </BasePage>
         ),
     },

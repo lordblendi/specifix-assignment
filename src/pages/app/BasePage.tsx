@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from "react"
 
 import Header from "../../components/header/Header"
-import PatientList from "./components/PatientList"
+import PatientList from "../../components/patients/components/PatientList"
 
 interface Props extends HTMLAttributes<HTMLElement> {
     hasContainer?: boolean

@@ -2,12 +2,8 @@ import React from "react"
 import { useSelector } from "react-redux"
 
 import { useAppDispatch, type RootState } from "../../../store"
-import {
-    fetchPatients,
-    setCurrentPage,
-    setFilter,
-} from "../../patientlist/slice"
-import { getFilteredAndPaginatedPatients } from "../../patientlist/selectors"
+import { fetchPatients, setCurrentPage, setFilter } from "../slice"
+import { getFilteredAndPaginatedPatients } from "../selectors"
 
 const PatientList = (): JSX.Element => {
     const dispatch = useAppDispatch()
@@ -46,11 +42,11 @@ const PatientList = (): JSX.Element => {
         <div className="sidebar">
             <input
                 onChange={onChange}
-                placeholder="Search patient"
+                placeholder="Search patients by name"
                 defaultValue={filter}
             />
 
-            <div className="tw-flex tw-w-full">
+            <div className="sidebar__listContainer">
                 {filteredAndPatients.length > 0 && (
                     <ul>
                         {filteredAndPatients.map(
@@ -61,6 +57,7 @@ const PatientList = (): JSX.Element => {
                     </ul>
                 )}
             </div>
+
             <div className="tw-flex tw-justify-between">
                 <button
                     className="button is-inverted"

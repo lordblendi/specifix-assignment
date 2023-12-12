@@ -12,7 +12,7 @@ export const makeServer = (): Server =>
         },
 
         seeds(server) {
-            server.createList("patient", 12)
+            server.createList("patient", 24)
         },
 
         routes() {

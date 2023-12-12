@@ -24,7 +24,7 @@ export const LoginPage = (): JSX.Element => {
     const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault()
         if (username === "sadmin") {
-            navigate("/users")
+            navigate("/patients")
         }
     }
 
