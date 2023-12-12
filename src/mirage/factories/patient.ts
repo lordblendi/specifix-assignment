@@ -35,10 +35,6 @@ export const patientFactory = Factory.extend({
     },
 
     stlFile(index) {
-        return [
-            "F040 Radius CL.stl",
-            "F055 Radius CL.stl",
-            "F062 Radius CL.stl",
-        ][index % 3]
+        return ["F040.stl", "F055.stl", "F062.stl"][index % 3]
     },
 })

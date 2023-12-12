@@ -16,7 +16,9 @@ export const makeServer = (): Server =>
         },
 
         routes() {
-            this.namespace = "api"
+            //allow asset calls for the stl files
+            this.passthrough((request) => request.url.includes("assets"))
+            this.namespace = "/api"
 
             this.get("/patients", () => {
                 return this.schema.all("patient")

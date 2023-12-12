@@ -6,7 +6,7 @@ import { RootState } from "../../../store"
 
 import { getPatiendById } from "../../../components/patients/selectors"
 import PatientDetail from "./components/PatientDetail"
-import StlViewer from "./components/StlViewer"
+import StlViewerComponent from "./components/StlViewerComponent"
 import PatientNotFound from "./components/PatientNotFound"
 
 export const DetailPage = (): JSX.Element => {
@@ -26,7 +26,7 @@ export const DetailPage = (): JSX.Element => {
     return (
         <>
             <PatientDetail patient={patient} />
-            <StlViewer patient={patient} />
+            <StlViewerComponent patient={patient} />
         </>
     )
 }
