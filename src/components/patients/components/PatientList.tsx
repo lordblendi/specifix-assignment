@@ -79,7 +79,7 @@ const PatientList = (): JSX.Element => {
 
             <div className="tw-flex tw-justify-between tw-items-center">
                 <button
-                    className="button is-inverted"
+                    className="button button--inverted"
                     onClick={setPrevious}
                     disabled={!hasPrevious}
                 >
@@ -91,7 +91,7 @@ const PatientList = (): JSX.Element => {
                     </span>
                 )}
                 <button
-                    className="button is-inverted"
+                    className="button button--inverted"
                     onClick={setNext}
                     disabled={!hasNext}
                 >

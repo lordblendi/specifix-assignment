@@ -8,7 +8,6 @@ export const LoginPage = (): JSX.Element => {
     const [password, setPassword] = React.useState("")
 
     const navigate = useNavigate()
-
     const dispatch = useAppDispatch()
 
     const onChangeUsername = React.useCallback(

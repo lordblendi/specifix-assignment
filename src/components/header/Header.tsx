@@ -1,12 +1,18 @@
 import React from "react"
-import { Link, NavLink } from "react-router-dom"
+import { useSelector } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
 
-interface Props {
-    showNavbar?: boolean
-}
+import { RootState, useAppDispatch } from "../../store"
+import { setUser } from "../../pages/authentication/slice"
 
-export const Header = ({ showNavbar = true }: Props): JSX.Element => {
+export const Header = (): JSX.Element => {
     const [isScrolled, setIsScrolled] = React.useState(false)
+    const user = useSelector((state: RootState) => state.auth.user)
+
+    const navigate = useNavigate()
+    const dispatch = useAppDispatch()
 
     React.useEffect(() => {
         window.addEventListener("scroll", onScroll)
@@ -19,15 +25,27 @@ export const Header = ({ showNavbar = true }: Props): JSX.Element => {
         setIsScrolled(window.scrollY > 30)
     }
 
+    const logout = (): void => {
+        dispatch(setUser())
+        navigate("/login")
+    }
+
     return (
         <header className={`header ${isScrolled ? "header--scrolled" : ""}`}>
             <Link to="/">
                 <img className="header__logo" src="assets/images/logo.png" />
             </Link>
 
-            {showNavbar && (
+            {!!user && (
                 <nav>
-                    <NavLink to="/">Patients</NavLink>
+                    <button
+                        onClick={logout}
+                        className="button button--transparent"
+                        title="Sign out"
+                    >
+                        <span className="tw-px-2">{user.username}</span>
+                        <FontAwesomeIcon icon={faRightFromBracket} />
+                    </button>
                 </nav>
             )}
         </header>

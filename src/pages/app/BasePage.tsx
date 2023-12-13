@@ -7,17 +7,15 @@ import PatientList from "../../components/patients/components/PatientList"
 interface Props extends HTMLAttributes<HTMLElement> {
     hasContainer?: boolean
     hasSidebar?: boolean
-    showNavbar?: boolean
 }
 
 const BasePage = ({
     children,
     hasContainer = true,
     hasSidebar = true,
-    showNavbar = true,
 }: Props): JSX.Element => (
     <>
-        <Header showNavbar={showNavbar} />
+        <Header />
         <main>
             {hasContainer ? (
                 <div className="container">

@@ -25,9 +25,15 @@ input {
     transform: scale(1.05);
   }
 
-  &.is-inverted {
+  &--inverted {
     background-color: white;
     color: $primaryColor;
+  }
+
+  &--transparent {
+    border-color: $primaryColor;
+    color: $primaryColor;
+    background-color: transparent;
   }
 
   &:disabled {
