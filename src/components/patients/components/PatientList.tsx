@@ -55,11 +55,14 @@ const PatientList = (): JSX.Element => {
             />
 
             <div className="sidebar__listContainer">
-                {filteredAndPatients.length > 0 && (
-                    <ul>
+                {filteredAndPatients.length > 0 ? (
+                    <ul className="sidebar__list">
                         {filteredAndPatients.map(
                             (patient, index): JSX.Element => (
-                                <li key={index}>
+                                <li
+                                    key={index}
+                                    className="sidebar__listElement"
+                                >
                                     <NavLink to={`/patients/${patient.id}`}>
                                         {patient.name}
                                     </NavLink>
@@ -67,6 +70,10 @@ const PatientList = (): JSX.Element => {
                             ),
                         )}
                     </ul>
+                ) : (
+                    <div className="sidebar__list--empty">
+                        No patients are registered in the system.
+                    </div>
                 )}
             </div>
 
