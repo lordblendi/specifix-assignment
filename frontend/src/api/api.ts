@@ -1,5 +1,5 @@
 function get<T>(url: string): Promise<T> {
-    return fetch(`api/${url}`).then((response) => response.json())
+    return fetch(`http://localhost:5000/${url}`).then((response) => response.json())
 }
 
 export const Api = {
