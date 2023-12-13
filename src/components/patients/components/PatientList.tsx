@@ -39,6 +39,13 @@ const PatientList = (): JSX.Element => {
         }
     }
 
+    // calculate the visible elements for pagination
+    const firstVisible = currentPage * pageSize + 1
+    let lastVisible = firstVisible + pageSize
+    if (lastVisible > patients.length) {
+        lastVisible = patients.length
+    }
+
     return (
         <div className="sidebar">
             <input
@@ -63,7 +70,7 @@ const PatientList = (): JSX.Element => {
                 )}
             </div>
 
-            <div className="tw-flex tw-justify-between">
+            <div className="tw-flex tw-justify-between tw-items-center">
                 <button
                     className="button is-inverted"
                     onClick={setPrevious}
@@ -71,6 +78,11 @@ const PatientList = (): JSX.Element => {
                 >
                     Previous
                 </button>
+                {patients.length > 0 && (
+                    <span className="label is-inverted">
+                        {firstVisible} - {lastVisible} / {patients.length}
+                    </span>
+                )}
                 <button
                     className="button is-inverted"
                     onClick={setNext}
