@@ -1,4 +1,5 @@
 import React, { HTMLAttributes } from "react"
+import { Outlet } from "react-router-dom"
 
 import Header from "../../components/header/Header"
 import PatientList from "../../components/patients/components/PatientList"
@@ -21,10 +22,16 @@ const BasePage = ({
             {hasContainer ? (
                 <div className="container">
                     {hasSidebar && <PatientList />}
-                    <div className="content">{children}</div>
+                    <div className="content">
+                        {children}
+                        <Outlet />
+                    </div>
                 </div>
             ) : (
-                <>{children}</>
+                <>
+                    {children}
+                    <Outlet />
+                </>
             )}
         </main>
     </>

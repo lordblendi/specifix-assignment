@@ -9,7 +9,7 @@ import PatientsLandingPage from "./pages/patients/landing/PatientsLandingPage"
 
 export const router = createHashRouter([
     {
-        path: "/",
+        path: "/login",
         element: (
             <BasePage hasContainer={false} showNavbar={false}>
                 <LoginPage />
@@ -17,21 +17,20 @@ export const router = createHashRouter([
         ),
     },
     {
-        path: "/patients/:patientId",
-        element: (
-            <BasePage>
-                <DetailPage />
-            </BasePage>
-        ),
+        path: "/",
+        element: <BasePage />,
+        children: [
+            {
+                path: "/",
+                element: <PatientsLandingPage />,
+            },
+            {
+                path: "/patients/:patientId",
+                element: <DetailPage />,
+            },
+        ],
     },
-    {
-        path: "/patients",
-        element: (
-            <BasePage>
-                <PatientsLandingPage />
-            </BasePage>
-        ),
-    },
+
     {
         path: "*",
         element: (

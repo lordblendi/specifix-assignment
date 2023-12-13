@@ -27,7 +27,7 @@ export const Header = ({ showNavbar = true }: Props): JSX.Element => {
 
             {showNavbar && (
                 <nav>
-                    <NavLink to="/patients">Patients</NavLink>
+                    <NavLink to="/">Patients</NavLink>
                 </nav>
             )}
         </header>
