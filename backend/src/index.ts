@@ -32,9 +32,7 @@ const generatePatient = (index: number): Patient => ({
     id: `${index}`,
     name: faker.person.fullName(),
     gender: faker.person.sexType(),
-    birthDate: faker.date
-        .past({ years: 60 })
-        .toLocaleDateString("en-GB"),
+    birthDate: faker.date.past({ years: 60 }).toLocaleDateString("en-GB"),
     birthLocation: generateBirthLocation(),
     address: generateAddress(),
     phone: fakerHU.phone.number(),
