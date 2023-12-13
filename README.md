@@ -1,3 +1,5 @@
+## To serve locally
+
 # Specifix assignment
 
 In this challenge we need you to implement a web app to be able to view the `.stl` file. The user needs to login to be able to see the web app.
@@ -14,34 +16,25 @@ In this challenge we need you to implement a web app to be able to view the `.st
 Username: sadmin
 Password: leave the field empty
 
-## Installation
 
-```
-yarn install
-```
+## Serve locally
 
-## Run development mode
+First start the backend, within the `backend` folder, use the following command:
 
 ```
 yarn start
 ```
 
-## Build production mode
+Then in another terminal, within the `frontend` folder, use the following command:
 
 ```
-yarn build
+yarn start
 ```
 
-## Linting
+## To serve via Docker compose
 
-The rules are in `.eslintrc.js` and in `.prettierrc.js`
-
-To run the linter:
 ```
-yarn lint
+docker compose up
 ```
 
-To run the linter and fix the autofixable errors:
-```
-yarn lint-fix
-```
+The backend should be available on `http://localhost:5000/` and the frontend on `http://localhost:8080/`. Live reload is currently not enabled.
