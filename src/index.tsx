@@ -11,7 +11,7 @@ import "./style/index.scss"
 import router from "./router"
 
 // start Mirage server
-makeServer()
+// makeServer()
 
 const rootElement = document.getElementById("root")
 

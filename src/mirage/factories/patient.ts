@@ -4,8 +4,8 @@ import { faker } from "@faker-js/faker"
 import { generateAddress } from "../utils/helpers"
 
 export const patientFactory = Factory.extend({
-    id() {
-        return faker.string.uuid()
+    id(i) {
+        return `${i}`
     },
 
     name() {
