@@ -1,11 +1,15 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import { setUser } from "../slice"
+import { useAppDispatch } from "../../../store"
 
 export const LoginPage = (): JSX.Element => {
     const [username, setUsername] = React.useState("")
     const [password, setPassword] = React.useState("")
 
     const navigate = useNavigate()
+
+    const dispatch = useAppDispatch()
 
     const onChangeUsername = React.useCallback(
         (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -24,6 +28,8 @@ export const LoginPage = (): JSX.Element => {
     const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault()
         if (username === "sadmin") {
+            const user: User = { username }
+            dispatch(setUser(user))
             navigate("/")
         }
     }

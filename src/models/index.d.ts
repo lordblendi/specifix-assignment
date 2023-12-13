@@ -8,3 +8,7 @@ interface Patient {
     phone: string
     stlFile: string
 }
+
+interface User {
+    username: string
+}

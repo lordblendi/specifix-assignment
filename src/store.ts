@@ -2,10 +2,12 @@ import { configureStore } from "@reduxjs/toolkit"
 import { useDispatch } from "react-redux"
 
 import patientReducer from "./components/patients/slice"
+import authReducer from "./pages/authentication/slice"
 
 export const store = configureStore({
     reducer: {
         patients: patientReducer,
+        auth: authReducer,
     },
 })
 
