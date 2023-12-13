@@ -1,5 +1,3 @@
-## To serve locally
-
 # Specifix assignment
 
 In this challenge we need you to implement a web app to be able to view the `.stl` file. The user needs to login to be able to see the web app.
